@@ -1,0 +1,188 @@
+# MediAlert AI — Running Instructions
+
+## Requirements
+
+Install the following before running the project:
+
+- Flutter SDK
+- Dart SDK
+- Android Studio
+- Android SDK
+- Git
+- Firebase account
+- OpenRouter API key (required for AI Assistant)
+
+Check Flutter:
+
+flutter doctor
+
+
+## 1. Clone the Project
+
+Open Terminal / PowerShell and run:
+
+git clone https://github.com/not-vishnu/MediAlert.git
+
+cd MediAlert
+
+
+## 2. Install Dependencies
+
+Run:
+
+flutter pub get
+
+
+## 3. Configure Firebase
+
+Install FlutterFire CLI:
+
+dart pub global activate flutterfire_cli
+
+Login to Firebase:
+
+firebase login
+
+Configure Firebase:
+
+flutterfire configure
+
+Select your Firebase project when asked.
+
+Make sure Firebase Authentication and Cloud Firestore are enabled in the Firebase Console.
+
+
+## 4. Configure OpenRouter AI
+
+The AI Assistant uses an OpenRouter API key.
+
+The project reads the key using:
+
+String.fromEnvironment('OPENROUTER_API_KEY')
+
+DO NOT put your actual API key inside Dart source code or commit it to GitHub.
+
+
+## 5. Run the Application
+
+For normal application testing:
+
+flutter run
+
+If you want to use the AI Assistant, provide your OpenRouter API key:
+
+flutter run --dart-define=OPENROUTER_API_KEY=YOUR_API_KEY
+
+Replace YOUR_API_KEY with your actual OpenRouter API key.
+
+
+## 6. Run on Android
+
+Connect an Android phone with USB debugging enabled or start an Android Emulator.
+
+Check connected devices:
+
+flutter devices
+
+Run the application:
+
+flutter run
+
+
+## 7. Run on Chrome
+
+To run the web version:
+
+flutter run -d chrome
+
+With AI:
+
+flutter run -d chrome --dart-define=OPENROUTER_API_KEY=YOUR_API_KEY
+
+
+## 8. If You Get Build Errors
+
+Run these commands in order:
+
+flutter clean
+
+flutter pub get
+
+flutter doctor
+
+flutter analyze
+
+flutter run
+
+
+## 9. Useful Commands
+
+Check Flutter:
+
+flutter doctor
+
+Check devices:
+
+flutter devices
+
+Install dependencies:
+
+flutter pub get
+
+Analyze project:
+
+flutter analyze
+
+Run tests:
+
+flutter test
+
+Clean project:
+
+flutter clean
+
+Run application:
+
+flutter run
+
+
+## 10. Important Security Note
+
+Never upload private credentials to GitHub.
+
+Do NOT commit:
+
+- OpenRouter API keys
+- Firebase private keys
+- Passwords
+- Access tokens
+- Service account credentials
+- Private certificates
+
+If an API key is accidentally uploaded to GitHub, revoke/rotate the key immediately.
+
+
+## 11. Quick Start
+
+For a fresh setup, run:
+
+git clone https://github.com/not-vishnu/MediAlert.git
+
+cd MediAlert
+
+flutter pub get
+
+flutterfire configure
+
+flutter run --dart-define=OPENROUTER_API_KEY=YOUR_API_KEY
+
+
+## 12. Medical Disclaimer
+
+MediAlert AI is intended for medicine reminders and general informational purposes.
+
+The AI Assistant does not replace a doctor, pharmacist, or qualified healthcare professional.
+
+Do not start, stop, or change medication based solely on AI-generated information.
+
+Always consult a qualified healthcare professional for medical advice.
